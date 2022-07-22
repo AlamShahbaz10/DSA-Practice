@@ -52,14 +52,17 @@ public class BST {
 
         System.out.println("INORDER Traversal");
         inorderTraversal(root);
+        System.out.println();
         System.out.println("********************************");
 
         System.out.println("PREORDER Traversal");
         preorderTraversal(root);
+        System.out.println();
         System.out.println("********************************");
 
         System.out.println("POSTORDER Traversal");
         postorderTraversal(root);
+        System.out.println();
         System.out.println("********************************");
     }
 
@@ -111,18 +114,20 @@ public class BST {
         if (node == null) return;
 
         if(node != null){
-            System.out.println(node.val);
             leftView(node.leftChild);
+            System.out.print(node.val + " ");
         }
+        System.out.println();
     }
 
     public void rightView(Node node){
         if (node == null) return;
 
         if(node != null){
-            System.out.println(node.val);
+            System.out.print(node.val + " ");
             rightView(node.rightChild);
         }
+        System.out.println();
     }
 
     public void topView(Node node){
@@ -180,7 +185,7 @@ public class BST {
         for (Map.Entry<Integer, Node> entry: treeMap.entrySet()) {
             System.out.print(entry.getValue().val + " ");
         }
-
+        System.out.println();
     }
 
     public void bottomViewOfBinaryTree(Node node){
@@ -223,6 +228,26 @@ public class BST {
             System.out.print(entry.getValue().val + " ");
         }
 
+        System.out.println();
+    }
+
+    public boolean contains(int val) {
+        return contains(root, val);
+    }
+
+    private boolean contains(Node root, int val) {
+        if(root == null) {
+            return false;
+        }
+
+        if(val > root.val){
+            return contains(root.rightChild, val);
+        }
+        if(val < root.val) {
+            return contains(root.leftChild, val);
+        }
+
+        return true;
     }
 
 
@@ -237,12 +262,24 @@ public class BST {
         bst.insert(6);
         bst.insert(8);
 
+        System.out.println("Contains value: " + bst.contains(81));
+
         bst.traversal();
 
-//        bst.leftView(bst.root);
-//        bst.rightView(bst.root);
-        //bst.topView(bst.root);
+        System.out.println("LEFT VIEW: ");
+        bst.leftView(bst.root);
+        System.out.println("****************************");
+
+
+        System.out.println("RIGHT VIEW: ");
+        bst.rightView(bst.root);
+        System.out.println("****************************");
+
+//        bst.topView(bst.root); //Incorrect
+
         bst.topViewOfBinaryTree(bst.root);
+        System.out.println("****************************");
+
         bst.bottomViewOfBinaryTree(bst.root);
 
     }
@@ -250,8 +287,8 @@ public class BST {
 
 /*
 
-                5
-            2        7
+                    5
+            2               7
         1       3        6      8
 
 

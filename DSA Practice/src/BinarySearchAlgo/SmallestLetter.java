@@ -62,6 +62,6 @@ public class SmallestLetter {
         char c = 'k';
         System.out.println(findSmallestLetter(arr, c));
 
-//        System.out.println(nextGreatestLetter(arr, c));
+        System.out.println(nextGreatestLetter(arr, c));
     }
 }

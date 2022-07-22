@@ -45,24 +45,7 @@ public class BinarySearch {
         int first = 0;
         int last = arr.length - 1;
 
-//        while(first <= last){
-//            int mid = (first + last) / 2;
-//            if(arr[mid] > n){
-//                last = mid - 1;
-//                ans = last + 1;
-//            }
-//            else if(arr[mid] < n){
-//                first = mid + 1;
-//                ans = first;
-//            }
-//            else{
-//                return arr[mid];
-//            }
-//        }
-//
-//        return arr[ans];
-
-//        if(n > arr[arr.length-1]) return -1;
+        if(n > arr[arr.length-1]) return -1;
 
         while(first <= last){
             int mid = (first + last) / 2;

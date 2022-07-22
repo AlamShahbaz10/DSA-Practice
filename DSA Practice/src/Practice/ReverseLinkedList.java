@@ -10,7 +10,7 @@ public class ReverseLinkedList {
         Node previous = null;
         Node current = node;
         Node next = null;
-
+//85 15 4 20
         while(current!=null){
             next = current.nextNode;
             current.nextNode = previous;

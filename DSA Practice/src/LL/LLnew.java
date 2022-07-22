@@ -1,23 +1,9 @@
 package LL;
 
-public class LL {
+public class LLnew {
 
     private Node head;
     private int size;
-
-    static class Node{
-        int val;
-        Node next;
-
-        public Node(int val) {
-            this.val = val;
-        }
-
-        public Node(int val, Node next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public void insertAtEnd(int val){
         if(head == null){
@@ -157,8 +143,8 @@ public class LL {
         }
     }
 
-    public LL mergeTwoSortedList(LL ll1, LL ll2){
-        LL ll3 = new LL();
+    public LLnew mergeTwoSortedList(LLnew ll1, LLnew ll2){
+        LLnew ll3 = new LLnew();
 
         Node temp1 = ll1.head;
         Node temp2 = ll2.head;
@@ -187,7 +173,7 @@ public class LL {
         return ll3;
     }
 
-    public boolean hasCycle(LL list){
+    public boolean hasCycle(LLnew list){
 
         Node slow = list.head;
         Node fast = list.head;
@@ -270,9 +256,9 @@ public class LL {
         return slow;
     }
 
-    private LL firstHalfOfLL(Node middleNode){
+    private LLnew firstHalfOfLL(Node middleNode){
 
-        LL firstHalfOfLL = new LL();
+        LLnew firstHalfOfLL = new LLnew();
 
         Node temp = head;
         while(temp != middleNode){
@@ -283,9 +269,9 @@ public class LL {
         return firstHalfOfLL;
     }
 
-    public LL reverseLL(){
+    public LLnew reverseLL(){
         Node temp = head;
-        LL newLL = new LL();
+        LLnew newLL = new LLnew();
 
         while(temp != null){
             newLL.insertAtStart(temp.val);
@@ -295,10 +281,10 @@ public class LL {
         return newLL;
     }
 
-    public LL reverseLLFromMiddleNode(){
+    public LLnew reverseLLFromMiddleNode(){
 
         Node middleNode = middleNode();
-        LL firstHalfOfLL = firstHalfOfLL(middleNode);
+        LLnew firstHalfOfLL = firstHalfOfLL(middleNode);
         Node temp1 = firstHalfOfLL.head;
         while(temp1.next != null){
             temp1 = temp1.next;
@@ -307,7 +293,7 @@ public class LL {
         Node temp2 = middleNode();
 
 
-        LL newLL = new LL();
+        LLnew newLL = new LLnew();
 
         while(temp2 != null){
             newLL.insertAtStart(temp2.val);
@@ -317,7 +303,7 @@ public class LL {
 
         Node head1 = firstHalfOfLL.head;
         Node head2 = newLL.head;
-        LL orderedElements = orderElements(head1, head2);
+        LLnew orderedElements = orderElements(head1, head2);
 
         Node temp3 = newLL.head;
         while(temp3 != null){
@@ -328,8 +314,8 @@ public class LL {
         return firstHalfOfLL;
     }
 
-    public LL orderElements(Node head1, Node head2){
-        LL orderedElements = new LL();
+    public LLnew orderElements(Node head1, Node head2){
+        LLnew orderedElements = new LLnew();
         while(head1 != null && head2 != null){
             orderedElements.insertAtEnd(head1.val);
             orderedElements.insertAtEnd(head2.val);
@@ -341,7 +327,7 @@ public class LL {
     }
 
     public static void main(String[] args) {
-        LL ll = new LL();
+        LLnew ll = new LLnew();
 
         ll.insertAtStart(3);
         ll.insertAtStart(20);
@@ -352,21 +338,21 @@ public class LL {
         ll.removeDuplicates();
         ll.display();
 
-        LL ll1 = new LL();
+        LLnew ll1 = new LLnew();
         ll1.insertAtEnd(1);
         ll1.insertAtEnd(2);
         ll1.insertAtEnd(4);
 
-        LL ll2 = new LL();
+        LLnew ll2 = new LLnew();
         ll2.insertAtEnd(1);
         ll2.insertAtEnd(3);
         ll2.insertAtEnd(4);
         ll2.insertAtEnd(5);
         ll2.insertAtEnd(6);
-        LL ll3 = ll.mergeTwoSortedList(ll1, ll2);
+        LLnew ll3 = ll.mergeTwoSortedList(ll1, ll2);
         ll3.display();
 
-        LL list = new LL();
+        LLnew list = new LLnew();
 //        list.insertAtEnd(1);
 //        list.insertAtEnd(2);
 //        list.insertAtEnd(5);
@@ -382,7 +368,7 @@ public class LL {
         list.insertAtEnd(6);
         list.insertAtEnd(7);
         list.insertAtEnd(8);
-        //list.head.next.next.next.next.next.next.next.next = list.head.next.next.next;
+//        list.head.next.next.next.next.next.next.next.next = list.head.next.next.next;
         System.out.println(list.hasCycle(list));
 
 
@@ -390,9 +376,9 @@ public class LL {
 //        list.display();
 //        System.out.println(list.middleNode().val);
 
-        LL reversedList = list.reverseLL();
+        LLnew reversedList = list.reverseLL();
         reversedList.display();
-        LL reversedListFromMiddleNode = list.reverseLLFromMiddleNode();
+        LLnew reversedListFromMiddleNode = list.reverseLLFromMiddleNode();
         reversedListFromMiddleNode.display();
         System.out.println(reversedListFromMiddleNode.size);
 
@@ -420,5 +406,19 @@ public class LL {
 //        ll.deleteAtIndex(5);
 //        ll.display();
 
+    }
+}
+
+ class Node{
+    int val;
+    Node next;
+
+    public Node(int val) {
+        this.val = val;
+    }
+
+    public Node(int val, Node next) {
+        this.val = val;
+        this.next = next;
     }
 }
