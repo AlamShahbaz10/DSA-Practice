@@ -29,10 +29,10 @@ public class BST {
     private void insert(int val, Node node) {
         //right child
         if(val > node.val){
-            if(node.rightChild != null){
+            if(node.rightChild != null) {
                 insert(val, node.rightChild);
             }
-            else{
+            else {
                 node.rightChild = new Node(val, node);
             }
         }
@@ -69,6 +69,8 @@ public class BST {
     //left right root
     private void postorderTraversal(Node node) {
 
+        if (node == null) return;
+
         if(node.leftChild != null){
             postorderTraversal(node.leftChild);
         }
@@ -85,6 +87,8 @@ public class BST {
     //Root left right
     private void preorderTraversal(Node node) {
 
+        if (node == null) return;
+
         System.out.print(node.val + " -> ");
 
         if(node.leftChild != null){
@@ -98,6 +102,8 @@ public class BST {
 
     //In order traversal (SORTED order) -> left, root, right
     private void inorderTraversal(Node node) {
+
+        if (node == null) return;
 
         if(node.leftChild != null){
             inorderTraversal(node.leftChild);
@@ -262,7 +268,7 @@ public class BST {
         bst.insert(6);
         bst.insert(8);
 
-        System.out.println("Contains value: " + bst.contains(81));
+        System.out.println("Contains value: " + bst.contains(6));
 
         bst.traversal();
 

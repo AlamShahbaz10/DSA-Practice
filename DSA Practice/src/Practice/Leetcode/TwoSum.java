@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class TwoSum {
     public static void main(String[] args) {
         int[] arr = {3, 2, 4}; //{2, 7, 11, 15};
-        int target = 8;
+        int target = 6;
         int[] ans = findPair(arr, target);
         System.out.println(ans[0] + " " + ans[1]);
 
